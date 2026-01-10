@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Moderno | Demostración</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <!-- Header y navegación -->
+    <header class="ecom-header">
+        <div class="container">
+            <nav class="ecom-nav">
+                <a href="#" class="ecom-logo">Shop<span>Modern</span></a>
+                
+                <div class="ecom-search">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="ecom-nav-icons">
+                    <a href="#" class="ecom-nav-icon">
+                        <i class="fas fa-user"></i>
+                        <span>Cuenta</span>
+                    </a>
+                    <a href="#" class="ecom-nav-icon">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <div class="ecom-cart-icon" id="cartToggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                        <span>Carrito</span>
+                    </div>
+                </div>
+                
+                <div class="ecom-mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Panel del carrito (oculto por defecto) -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Tu carrito está vacío</p>
+                <a href="#products" class="btn btn-primary">Ver productos</a>
+            </div>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-checkout" id="checkoutBtn">
+                <i class="fas fa-lock"></i> Proceder al pago
+            </button>
+            <button class="btn btn-outline" id="continueShopping">
+                <i class="fas fa-arrow-left"></i> Seguir comprando
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="ecom-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tienda Online Moderna</h1>
+                <p class="hero-subtitle">Una experiencia de compra fluida y atractiva</p>
+                <p class="hero-text">Esta demostración muestra una plataforma de e-commerce completa con carrito de compras, pasarela de pago simulada y panel de administración.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-bag"></i> Ver productos
+                    </a>
+                    <a href="#features" class="btn btn-outline btn-large">
+                        <i class="fas fa-star"></i> Ver características
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="E-commerce Moderno">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de características -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Características del Proyecto</h2>
+            <p class="section-subtitle">Una plataforma completa de comercio electrónico</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Carrito Inteligente</h3>
+                    <p>Carrito de compras con persistencia local, actualización en tiempo real y cálculos automáticos de precios.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Pasarela de Pago</h3>
+                    <p>Integración simulada con pasarelas de pago populares, con validación de datos y confirmación de pedidos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Panel de Administración</h3>
+                    <p>Dashboard para gestionar productos, órdenes, clientes y métricas de ventas con gráficos interactivos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Diseño Responsive</h3>
+                    <p>Interfaz completamente adaptativa que funciona perfectamente en desktop, tablet y móvil.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Búsqueda Avanzada</h3>
+                    <p>Sistema de búsqueda con filtros por categoría, precio, valoración y otras características.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Autenticación Segura</h3>
+                    <p>Sistema de registro y login de usuarios con validación de datos y protección de contraseñas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de productos -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Productos Destacados</h2>
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="electronics">Electrónica</button>
+                    <button class="filter-btn" data-filter="fashion">Moda</button>
+                    <button class="filter-btn" data-filter="home">Hogar</button>
+                    <button class="filter-btn" data-filter="sports">Deportes</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de proceso de pago simulado -->
+    <section class="checkout-demo">
+        <div class="container">
+            <h2 class="section-title">Proceso de Pago Simulado</h2>
+            <p class="section-subtitle">Experiencia de checkout optimizada y segura</p>
+            
+            <div class="checkout-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Carrito</h3>
+                        <p>Revisa los productos en tu carrito</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Información de Envío</h3>
+                        <p>Ingresa tu dirección de entrega</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Método de Pago</h3>
+                        <p>Selecciona tu forma de pago preferida</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Confirmación</h3>
+                        <p>Revisa y confirma tu pedido</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cardName">Nombre en la tarjeta</label>
+                        <input type="text" id="cardName" placeholder="Juan Pérez">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Número de tarjeta</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cardExpiry">Fecha de expiración</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/AA">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardCVC">CVC</label>
+                        <input type="text" id="cardCVC" placeholder="123">
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button class="btn btn-outline" id="simulatePayment">
+                        <i class="fas fa-credit-card"></i> Simular pago
+                    </button>
+                    <div class="payment-result" id="paymentResult"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel de administración simulado -->
+    <section class="admin-panel">
+        <div class="container">
+            <h2 class="section-title">Panel de Administración</h2>
+            <p class="section-subtitle">Gestión completa de productos, pedidos y clientes</p>
+            
+            <div class="admin-dashboard">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>152</h3>
+                            <p>Productos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>48</h3>
+                            <p>Pedidos hoy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1,240</h3>
+                            <p>Clientes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>$12,580</h3>
+                            <p>Ventas mensuales</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-actions">
+                    <h3>Acciones rápidas</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-admin">
+                            <i class="fas fa-plus"></i> Agregar producto
+                        </button>
+                        <button class="btn btn-admin">
+                            <i class="fas fa-file-invoice-dollar"></i> Ver reportes
+                        </button>
+                        <button class="btn btn-admin">
+                            <i class="fas fa-cog"></i> Configuración
+                        </button>
+                        <button class="btn btn-admin">
+                            <i class="fas fa-user-cog"></i> Gestionar usuarios
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="ecom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#" class="footer-logo">Shop<span>Modern</span></a>
+                    <p>Plataforma de comercio electrónico con carrito de compras, pasarela de pago integrada y panel de administración.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#features">Características</a></li>
+                        <li><a href="#" id="viewCartFooter">Ver carrito</a></li>
+                        <li><a href="#" id="simulateCheckout">Simular compra</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Tecnologías usadas</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> E-commerce Moderno - Demostración</p>
+                <p>Este es un proyecto de demostración. Los productos y pagos son simulados.</p>
+                <a href="../../../index.html" class="back-to-portfolio">
+                    <i class="fas fa-arrow-left"></i> Volver al portafolio
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de confirmación de pago -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Pago Simulado Exitoso</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>¡Gracias por tu compra simulada!</h4>
+                    <p>Tu pedido ha sido procesado correctamente en esta demostración.</p>
+                    <p>En un entorno real, el pago sería procesado por una pasarela de pago segura.</p>
+                    <div class="order-details">
+                        <p><strong>Número de pedido:</strong> #DEMO-<span id="orderNumber">12345</span></p>
+                        <p><strong>Total simulado:</strong> <span id="orderTotal">$0.00</span></p>
+                        <p><strong>Estado:</strong> <span class="status-completed">Completado</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="closeModalBtn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="ecommerce.js"></script>
+</body>
+</html>

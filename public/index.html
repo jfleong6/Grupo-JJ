@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Desarrollador Frontend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Header y navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Portafolio<span>Dev</span></a>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                    <li><a href="#about" class="nav-link">Nosotros</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#services" class="nav-link">Servicios</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Grupo JJ</h1>
+                <h2 class="hero-subtitle">Diseñadores Web / Desarrolladores Frontend</h2>
+                <p class="hero-text">Diseñamos experiencias web a medida que combinan estética, funcionalidad y
+                    rendimiento.</p>
+                <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="index.jpeg" alt="Fredy Leon - Desarrollador Frontend">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre mí -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Somos desarrolladores frontend/Backend con 5 años de experiencia creando interfaces web
+                        atractivas y funcionales. Nuestro enfoque está en construir experiencias de usuario
+                        excepcionales que impulsen resultados para mis clientes.</p>
+                    <p>Nos especializamos en transformar ideas complejas en soluciones digitales elegantes y accesibles,
+                        priorizando siempre la calidad del código y las mejores prácticas de desarrollo.</p>
+                    <p>Trabajamos en estrecha colaboración con nuestros clientes para asegurar que cada proyecto no solo
+                        cumpla, sino que supere sus expectativas.</p>
+                </div>
+                <div class="skills">
+                    <h3 class="skills-title">Habilidades principales</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Diseño Responsive</span>
+                        </div>
+                        <div class="skill">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>UX/UI Design</span>
+                        </div>
+                        <div class="skill">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <p class="section-subtitle">Una selección de nuestros trabajos más recientes y representativos</p>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+                            alt="E-commerce Moderno">
+                        <div class="project-overlay">
+                            <a href="/proyectos/ecommerce/ecommerce.html" class="project-link"
+                                aria-label="Ver demo del proyecto E-commerce Moderno">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-commerce Moderno</h3>
+                        <p class="project-description">Plataforma de comercio electrónico con carrito de compras,
+                            pasarela de pago integrada y panel de administración.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/proyectos/ecommerce/ecommerce.html" class="btn btn-outline">Ver demo</a>
+                            <!-- <a href="#" class="btn btn-text">Código <i class="fab fa-github"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1715&q=80"
+                            alt="Dashboard Analytics">
+                        <div class="project-overlay">
+                            <a href="/proyectos/dashboard/dashboard.html" class="project-link"
+                                aria-label="Ver demo del proyecto Dashboard Analytics">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Dashboard Analytics</h3>
+                        <p class="project-description">Panel de control interactivo con visualización de datos en tiempo
+                            real, gráficos dinámicos y filtros avanzados.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Chart.js</span>
+                            <span>CSS Modules</span>
+                            <span>API REST</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/proyectos/dashboard/dashboard.html" class="btn btn-outline">Ver demo</a>
+                            <!-- <a href="#" class="btn btn-text">Código <i class="fab fa-github"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                            alt="App de Tareas">
+                        <div class="project-overlay">
+                            <a href="/proyectos/taskapp/taskapp.html" class="project-link"
+                                aria-label="Ver demo del proyecto App de Tareas">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">App de Tareas</h3>
+                        <p class="project-description">Aplicación web para gestión de tareas con arrastrar y soltar,
+                            categorías, recordatorios y sincronización en la nube.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>Sass</span>
+                            <span>PWA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/proyectos/taskapp/taskapp.html" class="btn btn-outline">Ver demo</a>
+                            <!-- <a href="#" class="btn btn-text">Código <i class="fab fa-github"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-subtitle">Soluciones web personalizadas para hacer crecer tu negocio</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Diseño web a medida</h3>
+                    <p class="service-description">Creo sitios web únicos y atractivos que reflejan la identidad de tu
+                        marca y captan la atención de tus visitantes.</p>
+                    <ul class="service-list">
+                        <li>Diseño responsive</li>
+                        <li>Wireframes y prototipos</li>
+                        <li>UI/UX optimizado</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Desarrollo frontend</h3>
+                    <p class="service-description">Transformo diseños en código limpio y eficiente, asegurando una
+                        experiencia de usuario fluida en todos los dispositivos.</p>
+                    <ul class="service-list">
+                        <li>HTML5 semántico</li>
+                        <li>CSS3 avanzado</li>
+                        <li>JavaScript moderno</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="service-title">Optimización y mantenimiento</h3>
+                    <p class="service-description">Mejoro el rendimiento de tu sitio web y ofrezco soporte continuo para
+                        mantenerlo actualizado y seguro.</p>
+                    <ul class="service-list">
+                        <li>Optimización SEO</li>
+                        <li>Mejora de rendimiento</li>
+                        <li>Actualizaciones regulares</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+
+            <div class="contact-content">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span class="btn-text">Enviar mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-success" id="formSuccess">
+                        ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
+                    </div>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Otras formas de contacto</h3>
+                    <p>Prefieres contactarme directamente? Estoy disponible a través de estos medios:</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>ingfredy6@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+57 317 541 4049</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Bucaramanga, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Portafolio<span>Dev</span></a>
+                    <p>Creando experiencias web excepcionales desde 2019.</p>
+                </div>
+
+                <!-- <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="footer-social">
+                    <h4>Sígueme</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div> -->
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentYear"></span> PortafolioDev. Todos los derechos reservados.</p>
+                    <p>Desarrollado con <i class="fas fa-heart"></i> por Grupo JJ</p>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <a href="#hero" class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <!-- Agrega esto ANTES de tu index.js -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | App de Gestión de Tareas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="taskapp.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="app-container">
+        <!-- Header de la app -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="app-logo">
+                        <i class="fas fa-tasks"></i>
+                        <h1>Task<span>Flow</span></h1>
+                    </div>
+                    <p class="app-tagline">Organiza tu vida, una tarea a la vez</p>
+                </div>
+                
+                <div class="user-section">
+                    <div class="user-info">
+                        <div class="avatar">
+                            
+                        </div>
+                        <div class="user-details">
+                            <h4>Usuario </h4>
+                            <p>Usuario Premium</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sync-status">
+                        <button class="sync-btn" id="syncBtn">
+                            <i class="fas fa-cloud"></i>
+                            <span>Sincronizado</span>
+                        </button>
+                        <span class="last-sync">Hace 2 min</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="app-main">
+            <!-- Sidebar con categorías y filtros -->
+            <aside class="app-sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-plus"></i> Nueva Tarea</h3>
+                    <form id="taskForm" class="task-form">
+                        <div class="form-group">
+                            <input type="text" id="taskTitle" placeholder="Título de la tarea" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="taskDescription" placeholder="Descripción (opcional)" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskCategory"><i class="fas fa-tag"></i> Categoría</label>
+                            <select id="taskCategory">
+                                <option value="personal">Personal</option>
+                                <option value="work">Trabajo</option>
+                                <option value="study">Estudio</option>
+                                <option value="health">Salud</option>
+                                <option value="shopping">Compras</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskPriority"><i class="fas fa-flag"></i> Prioridad</label>
+                            <div class="priority-selector">
+                                <button type="button" class="priority-btn low" data-priority="low">Baja</button>
+                                <button type="button" class="priority-btn medium active" data-priority="medium">Media</button>
+                                <button type="button" class="priority-btn high" data-priority="high">Alta</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskReminder"><i class="fas fa-bell"></i> Recordatorio</label>
+                            <div class="reminder-options">
+                                <input type="datetime-local" id="taskReminder">
+                                <button type="button" class="quick-reminder" data-hours="1">1h</button>
+                                <button type="button" class="quick-reminder" data-hours="24">Mañana</button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-plus-circle"></i> Agregar Tarea
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-filter"></i> Filtros</h3>
+                    <div class="filters">
+                        <div class="filter-group">
+                            <h4>Categorías</h4>
+                            <div class="category-filters">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="personal" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="category-dot personal"></span>
+                                    Personal
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="work" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="category-dot work"></span>
+                                    Trabajo
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="study" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="category-dot study"></span>
+                                    Estudio
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="health" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="category-dot health"></span>
+                                    Salud
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="shopping" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="category-dot shopping"></span>
+                                    Compras
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h4>Prioridad</h4>
+                            <div class="priority-filters">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="high" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="priority-indicator high"></span>
+                                    Alta
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="medium" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="priority-indicator medium"></span>
+                                    Media
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="low" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="priority-indicator low"></span>
+                                    Baja
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline btn-block" id="applyFilters">
+                            <i class="fas fa-filter"></i> Aplicar Filtros
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-chart-bar"></i> Estadísticas</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalTasks">0</span>
+                            <span class="stat-label">Total Tareas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="completedTasks">0</span>
+                            <span class="stat-label">Completadas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="pendingTasks">0</span>
+                            <span class="stat-label">Pendientes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="overdueTasks">0</span>
+                            <span class="stat-label">Atrasadas</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área principal de tareas con columnas de arrastrar y soltar -->
+            <div class="task-board">
+                <div class="board-header">
+                    <h2>Tablero de Tareas</h2>
+                    <div class="board-actions">
+                        <button class="btn btn-outline" id="clearCompleted">
+                            <i class="fas fa-trash"></i> Limpiar Completadas
+                        </button>
+                        <button class="btn btn-outline" id="exportTasks">
+                            <i class="fas fa-file-export"></i> Exportar
+                        </button>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="board">
+                                <i class="fas fa-columns"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-container" id="boardContainer">
+                    <!-- Columna: Por hacer -->
+                    <div class="task-column" id="todoColumn">
+                        <div class="column-header">
+                            <h3><i class="fas fa-circle"></i> Por hacer</h3>
+                            <span class="task-count" id="todoCount">0</span>
+                        </div>
+                        <div class="task-list" id="todoList" data-status="todo">
+                            <!-- Las tareas se agregarán aquí dinámicamente -->
+                            <div class="empty-column">
+                                <i class="fas fa-plus-circle"></i>
+                                <p>Arrastra tareas aquí o crea una nueva</p>
+                            </div>
+                        </div>
+                        <div class="column-footer">
+                            <button class="add-task-btn" data-column="todo">
+                                <i class="fas fa-plus"></i> Agregar tarea
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: En progreso -->
+                    <div class="task-column" id="progressColumn">
+                        <div class="column-header">
+                            <h3><i class="fas fa-spinner"></i> En progreso</h3>
+                            <span class="task-count" id="progressCount">0</span>
+                        </div>
+                        <div class="task-list" id="progressList" data-status="progress">
+                            <!-- Las tareas se agregarán aquí dinámicamente -->
+                            <div class="empty-column">
+                                <i class="fas fa-exchange-alt"></i>
+                                <p>Arrastra tareas en progreso aquí</p>
+                            </div>
+                        </div>
+                        <div class="column-footer">
+                            <button class="add-task-btn" data-column="progress">
+                                <i class="fas fa-plus"></i> Agregar tarea
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Completadas -->
+                    <div class="task-column" id="doneColumn">
+                        <div class="column-header">
+                            <h3><i class="fas fa-check-circle"></i> Completadas</h3>
+                            <span class="task-count" id="doneCount">0</span>
+                        </div>
+                        <div class="task-list" id="doneList" data-status="done">
+                            <!-- Las tareas se agregarán aquí dinámicamente -->
+                            <div class="empty-column">
+                                <i class="fas fa-check"></i>
+                                <p>¡Completa tareas para verlas aquí!</p>
+                            </div>
+                        </div>
+                        <div class="column-footer">
+                            <button class="add-task-btn" data-column="done">
+                                <i class="fas fa-plus"></i> Agregar tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vista de lista (oculta por defecto) -->
+                <div class="list-container hidden" id="listContainer">
+                    <div class="list-header">
+                        <h3><i class="fas fa-list"></i> Vista de Lista</h3>
+                        <div class="list-actions">
+                            <button class="btn btn-outline btn-small" id="sortByDate">
+                                <i class="fas fa-calendar-alt"></i> Ordenar por fecha
+                            </button>
+                            <button class="btn btn-outline btn-small" id="sortByPriority">
+                                <i class="fas fa-flag"></i> Ordenar por prioridad
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task-list-view" id="taskListView">
+                        <!-- Las tareas en formato lista se agregarán aquí dinámicamente -->
+                    </div>
+                </div>
+                
+                <!-- Sección de recordatorios -->
+                <div class="reminders-section">
+                    <div class="reminders-header">
+                        <h3><i class="fas fa-bell"></i> Recordatorios Próximos</h3>
+                        <button class="btn btn-text" id="snoozeAll">
+                            <i class="fas fa-clock"></i> Posponer todos
+                        </button>
+                    </div>
+                    <div class="reminders-list" id="remindersList">
+                        <!-- Los recordatorios se agregarán aquí dinámicamente -->
+                        <div class="empty-reminders">
+                            <i class="fas fa-bell-slash"></i>
+                            <p>No hay recordatorios próximos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer de la app -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>TaskFlow - App de Tareas</h4>
+                    <p>Aplicación web para gestión de tareas con arrastrar y soltar, categorías, recordatorios y sincronización en la nube.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">PWA</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="/../../index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Volver al portafolio
+                    </a>
+                    <button class="btn btn-primary" id="demoReset">
+                        <i class="fas fa-redo"></i> Reiniciar Demo
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> TaskFlow - Demostración</p>
+                <p>Esta es una aplicación de demostración. Los datos se guardan localmente en tu navegador.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal para editar tarea -->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Editar Tarea</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editTaskForm">
+                    <div class="form-group">
+                        <label for="editTaskTitle">Título</label>
+                        <input type="text" id="editTaskTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editTaskDescription">Descripción</label>
+                        <textarea id="editTaskDescription" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editTaskCategory">Categoría</label>
+                            <select id="editTaskCategory">
+                                <option value="personal">Personal</option>
+                                <option value="work">Trabajo</option>
+                                <option value="study">Estudio</option>
+                                <option value="health">Salud</option>
+                                <option value="shopping">Compras</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editTaskStatus">Estado</label>
+                            <select id="editTaskStatus">
+                                <option value="todo">Por hacer</option>
+                                <option value="progress">En progreso</option>
+                                <option value="done">Completada</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Prioridad</label>
+                            <div class="priority-selector">
+                                <button type="button" class="priority-btn low" data-priority="low">Baja</button>
+                                <button type="button" class="priority-btn medium" data-priority="medium">Media</button>
+                                <button type="button" class="priority-btn high" data-priority="high">Alta</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editTaskDueDate">Fecha límite</label>
+                            <input type="date" id="editTaskDueDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editTaskReminder">Recordatorio</label>
+                        <div class="reminder-edit">
+                            <input type="datetime-local" id="editTaskReminder">
+                            <button type="button" class="btn btn-text" id="clearReminder">
+                                <i class="fas fa-times"></i> Limpiar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="editTaskId">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelEdit">Cancelar</button>
+                <button class="btn btn-primary" id="saveTaskChanges">
+                    <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+                <button class="btn btn-danger" id="deleteTask">
+                    <i class="fas fa-trash"></i> Eliminar Tarea
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para exportar -->
+    <div class="modal" id="exportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-export"></i> Exportar Tareas</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options">
+                    <div class="export-option">
+                        <input type="radio" id="exportJSON" name="exportFormat" value="json" checked>
+                        <label for="exportJSON">
+                            <i class="fas fa-file-code"></i>
+                            <div>
+                                <h4>JSON</h4>
+                                <p>Formato estructurado para respaldo o importación</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="export-option">
+                        <input type="radio" id="exportCSV" name="exportFormat" value="csv">
+                        <label for="exportCSV">
+                            <i class="fas fa-file-csv"></i>
+                            <div>
+                                <h4>CSV</h4>
+                                <p>Compatible con Excel y Google Sheets</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="export-option">
+                        <input type="radio" id="exportPDF" name="exportFormat" value="pdf">
+                        <label for="exportPDF">
+                            <i class="fas fa-file-pdf"></i>
+                            <div>
+                                <h4>PDF</h4>
+                                <p>Documento imprimible con todas las tareas</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="export-filter">
+                    <h4>Filtrar tareas a exportar</h4>
+                    <select id="exportFilter">
+                        <option value="all">Todas las tareas</option>
+                        <option value="todo">Solo pendientes</option>
+                        <option value="done">Solo completadas</option>
+                        <option value="today">Tareas de hoy</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelExport">Cancelar</button>
+                <button class="btn btn-primary" id="confirmExport">
+                    <i class="fas fa-download"></i> Exportar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Scripts -->
+    <script src="taskapp.js"></script>
+</body>
+</html>
